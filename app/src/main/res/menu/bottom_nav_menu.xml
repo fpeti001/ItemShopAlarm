@@ -5,18 +5,18 @@
         android:id="@+id/home"
         android:enabled="true"
         android:icon="@drawable/ic_add"
-        android:title="Recents"
+        android:title="@string/daily_button"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/kedvenc"
         android:enabled="true"
         android:icon="@drawable/ic_kedvenc"
-        android:title="Favorites"
-        app:showAsAction="ifRoom" />
+        android:title="@string/favorit_button"
+        app:showAsAction="ifRoom|withText" />
     <item
         android:id="@+id/tartalek"
         android:enabled="true"
-        android:icon="@drawable/ic_tartalek"
-        android:title="Nearby"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/settings_button"
         app:showAsAction="ifRoom" />
 </menu>

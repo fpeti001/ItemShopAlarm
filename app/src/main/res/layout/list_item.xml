@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="40dp"
-    android:background="@color/tan_background"
+
     >
 
 
@@ -30,6 +30,13 @@
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@color/szurke"
             tools:text="one" />
+        <ImageView
+            android:id="@+id/delete_image_view"
+            android:layout_alignParentRight="true"
+            android:paddingHorizontal="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
 
 
    </RelativeLayout>

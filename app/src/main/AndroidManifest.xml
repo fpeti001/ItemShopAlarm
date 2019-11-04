@@ -1,32 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.itemshop4">
+    package="com.ige.itemshop4">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
     <application
-        android:name=".App"
+        android:name="com.ige.itemshop4.App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/aaaaaaaaaaaaaaaaaaaaaaaa"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/aaaaaaaaaaaaaaaaaaaaaaaa"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".KedvencekActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.ige.itemshop4.SettingsActivity"
+            android:label="@string/settings_title"
+
+             ></activity>
+
+        <receiver
+            android:name="com.ige.itemshop4.SampleBootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.ige.itemshop4.PopupNagyKep"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
+        <activity
+            android:name="com.ige.itemshop4.KedvencekHatterActivity"
+            android:label="@string/favorite_title"
+            />
+        <activity
+            android:name="com.ige.itemshop4.KedvencekActivity"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
+        <activity android:name="com.ige.itemshop4.MainActivity"
+            android:label="@string/daly_title"
+         >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".ExampleService" />
-        <receiver android:name=".AlertReceiver" />
-        <service android:name=".JobIntentNotificationService"
-            android:permission="android.permission.BIND_JOB_SERVICE"
-            android:exported="true"/>
 
+        <service android:name="com.ige.itemshop4.ExampleService" />
+
+        <receiver android:name="com.ige.itemshop4.AlertReceiver" />
     </application>
 
 </manifest>

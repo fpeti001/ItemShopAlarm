@@ -1,4 +1,47 @@
 <resources>
-    <string name="app_name">ItemShop4</string>
+    <string name="app_name">Item Shop Alarm </string>
+
+
+    <!-- Napi oldal szovegei -->
+    <string name="daly_title">Dsaily items</string>
+    <string name="popup_search_on">search on:</string>
+    <string name="no_image_text">(no image)</string>
+
+
+
+
+    <!-- kedvencek oldal -->
+    <string name="favorite_title">Favorite items</string>
+    <string name="clear_favorit_list">Clear</string>
+    <string name="clear_warning">Are you sure you want to clear your favorite item list?</string>
+    <string name="add_favorit">+</string>
+    <string name="delete_one_element_warning">Are you sure you want to delete this item from your favorite item list? </string>
+
+    <string name="chose_item_window_title">Choose favorite</string>
+    <string name="chose_window_search">Search</string>
+    <string name="back_button">Back</string>
+    <!-- Settings text -->
+    <string name="settings_title">Settings</string>
+
+    <!-- Button menu text -->
+    <string name="daily_button">Daily</string>
+    <string name="favorit_button">Favorite</string>
+    <string name="settings_button">Settings</string>
+    <!-- infok -->
+    <string name="napkozbeni_ertesites_info">If one of your favorite items is available in the Item Shop, here you can set an alarm and choose a time when you want to get alarm notification during the day. \n(In all cases the application at every 2:30 am will make you a silent notification and that you can see in the morning)</string>
+
+    <!-- popup -->
+    <string name="you_will_get_alarm1">you will be notified if </string>
+    <string name="you_will_get_alarm2"> available in item shop</string>
+    <string name="download_error">Download error</string>
+    <string name="no_internet_connection">no internet connection</string>
+    <string name="loading_please_wait">Loading. Please wait...</string>
+    <string name="today_availbiable">Today this item is available:  </string>
+
+    <!-- rest -->
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+
 
 </resources>
