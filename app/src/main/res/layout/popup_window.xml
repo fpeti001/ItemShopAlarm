@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:background="#62def8">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:onClick="refreshbutton"
+                android:id="@+id/refresh_button"
+                android:layout_gravity="right"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:drawableBottom="@drawable/ic_refresh"
+                android:layout_marginRight="30dp"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="paddingintent"
+                android:onClick="paddingintentTeszt"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="leallito"
+                android:onClick="lealllito_culdown"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:onClick="startserviceonclick"
+                android:id="@+id/startservice_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Service" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="stopService"
+                android:text="Stop Service" />
+            <Button
+                android:text="cleanshared"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="sharednullazo"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="400dp">
+
+        <TextView
+            android:id="@+id/hatter_indulas_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="400dp" />
+    </ScrollView>
+    </LinearLayout>
+</RelativeLayout>
