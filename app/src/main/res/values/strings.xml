@@ -28,7 +28,8 @@
     <string name="favorit_button">Favorite</string>
     <string name="settings_button">Settings</string>
     <!-- infok -->
-    <string name="napkozbeni_ertesites_info">If one of your favorite items is available in the Item Shop, here you can set an alarm and choose a time when you want to get alarm notification during the day. \n(In all cases the application at every 2:30 am will make you a silent notification and that you can see in the morning)</string>
+    <string name="napkozbeni_ertesites_info">If one of your favorite items is available in the Item Shop, here you can set an alarm and choose a time when you want to get alarm notification during the day. \n(In all cases the application at every </string>
+    <string name="napkozbeni_ertesites_info2"> will make you a silent notification and that you can see in the morning)</string>
 
     <!-- popup -->
     <string name="you_will_get_alarm1">you will be notified if </string>
