@@ -45,7 +45,7 @@ public  class BasicMethods {
         frissulUTC.set(Calendar.HOUR_OF_DAY, 23);
         frissulUTC.set(Calendar.MINUTE, 59);
         frissulUTC.set(Calendar.SECOND, 00);
-        frissulUTC.add(Calendar.MINUTE,6);
+        frissulUTC.add(Calendar.MINUTE,1);
         long utcmost=mostUTC.getTimeInMillis();
         long utcfrisites=frissulUTC.getTimeInMillis();
         ennyiIdoMulva=frissulUTC.getTimeInMillis()-mostUTC.getTimeInMillis();

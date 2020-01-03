@@ -302,6 +302,7 @@ public void alsomenukeszito(){
 
         List<String> egyezok = new ArrayList<String>();
         String iras=(String) searchEdittext.getText().toString();
+
         if (iras!="") {
             wordsAdapter.clear();
             for (int i = 0; i < osszesItemArray.size(); i++) {

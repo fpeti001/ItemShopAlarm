@@ -133,7 +133,8 @@ if (loadBoolean("sokadikinditas")==false)elsoInditas();
         this.registerReceiver(new Receiver(), filter);
 
         kedvencekarray = loadData("kedvencekarray");
-       if (vanMarAlarm()!=true)mindenapIsmetles();
+     /*  if (vanMarAlarm()!=true)
+           mindenapIsmetles();*/
 
 
         if (mavoltletoltes()) {
@@ -204,10 +205,12 @@ if (loadBoolean("sokadikinditas")==false)elsoInditas();
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+
             case R.id.popup_fejlecbe:
                 onButtonShowPopupWindowClick();
+
             case R.id.refresh_felul_button:
-                refresh();
+          refresh();
                 return true;
 
             default:
@@ -478,14 +481,12 @@ if (loadBoolean("sokadikinditas")==false)elsoInditas();
 
         Calendar calendarNemzetkozi=Calendar.getInstance();
         calendarNemzetkozi.setTimeInMillis(System.currentTimeMillis() + BasicMethods.hatralevoIdoFrissitesig());
+        calendarNemzetkozi.add(Calendar.MINUTE,5);
         popupTextAdd("Service Calendar: " + calendarNemzetkozi.getTime());
 
-        long startUpTime = calendarNemzetkozi.getTimeInMillis();
-        if (System.currentTimeMillis() > startUpTime) {
-            startUpTime = startUpTime + 24 * 60 * 60 * 1000;
+        long startUpTime = cal.getTimeInMillis();
 
-        }
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, startUpTime, AlarmManager.INTERVAL_DAY, pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, startUpTime, AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
 
     }
 
@@ -778,7 +779,7 @@ public void frissitesigVisszaszamolas(){
 
     Calendar calendar = Calendar.getInstance();
 
-    calendar.setTimeInMillis(System.currentTimeMillis() + BasicMethods.hatralevoIdoFrissitesig());
+    calendar.setTimeInMillis(System.currentTimeMillis() + BasicMethods.hatralevoIdoFrissitesig()+(1000*60*5));
 
 
 

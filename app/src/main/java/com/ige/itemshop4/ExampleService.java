@@ -105,7 +105,9 @@ public class ExampleService extends Service {
         startForeground(1, notification);
 
         //do heavy work on a background thread
+
         idoTextKeszito();
+        popupTextAdd("wifi be: "+BasicMethods.checkWifiOnAndConnected(getApplicationContext()));
         String extra = intent.getStringExtra("extra");
         switch (extra){
             case "mindennap":
@@ -149,8 +151,7 @@ public class ExampleService extends Service {
 
 
         }
-
-
+        if (!vanMarAlarm())mindenapIsmetles();
         stopSelf();
 
 
@@ -295,6 +296,7 @@ public class ExampleService extends Service {
                     } catch (JSONException e) {
                         //    napiItemText.setText("hibaa");
                         letoltesKeszReciverKuldes("error");
+                        popupTextAdd("Try error");
                         e.printStackTrace();
                     }
 
@@ -304,6 +306,7 @@ public class ExampleService extends Service {
                 @Override
                 public void onErrorResponse(VolleyError volleyError) {
                     letoltesKeszReciverKuldes("error");
+                    popupTextAdd("letöltés error");
 
 
                 }
@@ -420,6 +423,7 @@ public class ExampleService extends Service {
                     } catch (JSONException e) {
                         //   napiItemText.setText("hibaa");
                         letoltesKeszReciverKuldes("error");
+                        popupTextAdd("Try error");
                         e.printStackTrace();
                     }
 
@@ -428,7 +432,7 @@ public class ExampleService extends Service {
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError volleyError) {
-
+                    popupTextAdd("letolt error");
                     letoltesKeszReciverKuldes("error");
                 }
             })
@@ -536,10 +540,10 @@ public class ExampleService extends Service {
         Date eddigFriss;
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis() + BasicMethods.hatralevoIdoFrissitesig());
-        calendar.add(Calendar.MINUTE,-2);
+         calendar.add(Calendar.MINUTE,-2);
 
         eddigFriss = calendar.getTime();
-
+        popupTextAdd(melyiknek+"friss: "+eddigFriss);
         saveDate(melyiknek, eddigFriss);
 //asdd
     }
@@ -690,7 +694,7 @@ public class ExampleService extends Service {
     }
 
     public void idoTextKeszito() {
-        String inudlasiido = datumido() + "\n";
+        String inudlasiido ="SERVICE: "+ datumido() + "^^^^^^\n";
         String inudlasiidolista;
         inudlasiidolista = loadString("inudlasiidolista");
         inudlasiidolista = inudlasiido + inudlasiidolista;
@@ -753,13 +757,11 @@ public class ExampleService extends Service {
 
        Calendar calendarNemzetkozi=Calendar.getInstance();
         calendarNemzetkozi.setTimeInMillis(System.currentTimeMillis() + BasicMethods.hatralevoIdoFrissitesig());
+        calendarNemzetkozi.add(Calendar.MINUTE,3);
         popupTextAdd("Service Calendar: " + calendarNemzetkozi.getTime());
 
         long startUpTime = calendarNemzetkozi.getTimeInMillis();
-        if (System.currentTimeMillis() > startUpTime) {
-            startUpTime = startUpTime + 24 * 60 * 60 * 1000;
 
-        }
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, startUpTime, AlarmManager.INTERVAL_DAY, pendingIntent);
     }
 
@@ -832,5 +834,20 @@ public class ExampleService extends Service {
         if (vantalalat) {
             notificationDialog((String)getText(R.string.today_availbiable), talalatok, 7);
         }
+    }
+    public  Boolean vanMarAlarm(){
+        Boolean visszaad=true;
+        Intent intent = new Intent(this, AlertReceiver.class);
+        PendingIntent sender = PendingIntent.getBroadcast(this, 1001, intent, PendingIntent.FLAG_NO_CREATE);
+        PendingIntent sender2 = PendingIntent.getBroadcast(this, 1002, intent, PendingIntent.FLAG_NO_CREATE);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        boolean isWorking =(alarmManager!= null);
+        popupTextAdd("alarmmanager: "+isWorking);
+        boolean isWorking2 =(sender!= null);
+        boolean isWorking3 =(sender2!= null);//just changed the flag
+        popupTextAdd("Pendingintent bevankapcsolva: "+isWorking2);
+        popupTextAdd("Pendingintentnappal bevankapcsolva: "+isWorking3);
+        if (isWorking&&isWorking2){}else {visszaad=false;}
+        return visszaad;
     }
 }
